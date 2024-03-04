@@ -14,9 +14,66 @@
     color: #ff9f43;
     border:1px solid #ff9f43;
 }
-/* index.css */
-
-.input-small,
-.input-medium {
-    border-color: #E56717;
+input:focus {
+    outline: 2px solid #ff9f43; /* Change the outline style, width, and color */
 }
+.custom-input {
+    border: 2px solid rgb(229, 228, 228); /* initial border color */
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 16px;
+    transition: border-color 0.3s ease; /* smooth transition for border color change */
+  }
+  
+  .custom-input:focus {
+    border-color: #ff9f43; /* change border color when input is focused */
+    outline: none; /* remove default outline */
+  }
+  /* Hide the default checkbox */
+input[type="checkbox"] {
+    position: absolute;
+    opacity: 0;
+  }
+  
+  /* Define the custom checkbox style */
+  input[type="checkbox"] + label {
+    position: relative;
+    padding-left: 25px;
+    cursor: pointer;
+  }
+  
+  /* Create the checkbox container */
+  input[type="checkbox"] + label:before {
+    content: '';
+    position: absolute;
+    left: -20px;
+    top: 0;
+    width: 20px;
+    height: 20px;
+    border: 2px solid #aaa;
+    border-radius: 4px;
+  }
+  
+  /* Define the tick mark */
+  input[type="checkbox"]:checked + label:after {
+    content: '\2713'; /* Unicode for checkmark */
+    font-size: 16px;
+    position: absolute;
+    top: 40%;
+    left: -10px;
+    transform: translate(-50%, -50%);
+    color: #ff9f43; /* Change tick color */
+    background-color: white;
+  }
+  
+  /* Change the appearance of the checkbox border on hover */
+  input[type="checkbox"] + label:before {
+    transition: border-color 0.3s ease;
+  }
+  
+  input[type="checkbox"]:hover + label:before {
+    border-color: #ff9f43; /* Change border color on hover */
+    color: white;
+  }
+  
+  
